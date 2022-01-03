@@ -104,7 +104,7 @@ export default function Footer() {
         </div>
         <div className="footer__bottom">
           <div className="footer__bottom__logo">Лого</div>
-          <div className="footer__bottom__go-up-button btn">наверх</div>
+          <button className="footer__bottom__go-up-button btn btn-icon">наверх</button>
           <div className="footer__bottom__credentials">2018 WEB</div>
         </div>
       </Wrapper>

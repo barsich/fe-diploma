@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Wrapper from '../Wrapper';
+import HeaderMain from './HeaderMain';
+import HeaderRoutes from './HeaderRoutes';
 
 export default function Header({ pageType }) {
   let headerClass = '';
@@ -8,11 +10,15 @@ export default function Header({ pageType }) {
     case 'main':
       headerClass = 'header-main';
       break;
+    case 'routes':
+      headerClass = 'header-routes';
+      break;
 
     default:
       break;
   }
 
+  // FIXME ссылки из шапки на других страницах не якорями
   return (
     <header className={`header ${headerClass}`}>
       <div className="header__logo-wrapper">
@@ -46,7 +52,13 @@ export default function Header({ pageType }) {
           </ul>
         </Wrapper>
       </div>
-      {/* TODO props.children? компоненты в зависимости от типа страницы? */}
+      {/* TODO компоненты в зависимости от типа страницы */}
+      {pageType === 'main' && (
+        <Wrapper>
+          <HeaderMain />
+        </Wrapper>
+      )}
+      {pageType === 'routes' && <HeaderRoutes />}
     </header>
   );
 }
