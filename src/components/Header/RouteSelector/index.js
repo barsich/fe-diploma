@@ -6,9 +6,9 @@ function RouteSelector({ pageType }) {
     <form className={`route-selector route-selector_${pageType}`}>
       <div className="route-selector__row">
         <p className="route-selector__direction-title">Направление</p>
-        <input type="text" className="route-selector__direction-from" placeholder="Откуда" />
+        <input type="text" className="route-selector__direction-back" placeholder="Откуда" />
         <button className="route-selector__swapper btn btn-icon" type="button"></button>
-        <input type="text" className="route-selector__direction-to" placeholder="Куда" />
+        <input type="text" className="route-selector__direction-there" placeholder="Куда" />
       </div>
       <div className="route-selector__row">
         <p className="route-selector__date-title">Дата</p>
