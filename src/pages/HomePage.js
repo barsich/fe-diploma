@@ -7,6 +7,7 @@ import Reviews from '../components/Reviews';
 export default function HomePage() {
   return (
     <>
+      <style>{'body { background-color: white; }'}</style>
       <Header pageType={'main'} />
       <About />
       <HowItWorks />

@@ -10,6 +10,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #f7f5f9;
 }
 
 input,
@@ -52,7 +53,7 @@ input::placeholder {
 
 /* buttons */
 
-.btn {
+.btn:not(:disabled) {
   cursor: pointer;
 }
 
@@ -83,8 +84,8 @@ input::placeholder {
 }
 
 .btn_orange-black {
-  background-color: #ffca62;
-  border: 1px solid #ffca62;
+  background-color: #ffa800;
+  border: 1px solid #ffa800;
   border-radius: 5px;
   color: black;
 }
@@ -95,7 +96,27 @@ input::placeholder {
 
 .btn_orange-black:active {
   background-color: transparent;
-  color: #ffca62;
+  color: #ffa800;
+}
+
+.btn_orange-white {
+  background-color: #ffa800;
+  border: 1px solid #ffa800;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn_orange-white:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_orange-white:active {
+  background-color: transparent;
+  color: #ffa800;
+}
+
+.btn_orange-white:disabled {
+  background-color: #918f94;
 }
 
 /* header */
@@ -340,17 +361,7 @@ input::placeholder {
   position: relative;
   padding-left: 30px;
   max-width: 1170px;
-}
-
-.about__body::before {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 9px;
-  height: 100%;
-  background-color: #ffa800;
-  top: 0;
-  left: 0;
+  border-left: 9px solid #ffa800;
 }
 
 .about__paragraph {
@@ -726,20 +737,20 @@ input::placeholder {
   background-position: center;
 }
 
-.service-list__item__coupe::before {
-  background-image: url(./images/icons/coupe.svg);
+.service-list__item__second-class::before {
+  background-image: url(./images/icons/second-class.svg);
 }
 
-.service-list__item__reserver-seat::before {
-  background-image: url(./images/icons/reserved-seat.svg);
+.service-list__item__third-class::before {
+  background-image: url(./images/icons/third-class.svg);
 }
 
-.service-list__item__seating::before {
-  background-image: url(./images/icons/seating.svg);
+.service-list__item__fourth-class::before {
+  background-image: url(./images/icons/fourth-class.svg);
 }
 
-.service-list__item__lux::before {
-  background-image: url(./images/icons/lux.svg);
+.service-list__item__first-class::before {
+  background-image: url(./images/icons/first-class.svg);
 }
 
 .service-list__item__wi-fi::before {
@@ -867,13 +878,318 @@ input:checked + .checkbox-slider:before {
 
 .rc-slider-tooltip-inner {
   font-size: 16px;
-  color: #E5E5E5;
+  color: #e5e5e5;
   background-color: transparent;
   box-shadow: none;
 }
 
-/* routes main */
+/* routes main tickets */
 
 .routes-main {
   width: 960px;
+}
+
+.routes-main__header {
+  display: flex;
+  justify-content: space-between;
+  color: #928f94;
+  margin-bottom: 47px;
+}
+
+.routes-main__header span {
+  margin-right: 5px;
+}
+
+.routes-main__header__sort-by {
+  position: relative;
+  display: flex;
+  width: 250px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.custom-select {
+  position: absolute;
+  background-color: #f7f5f9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  top: -10px;
+  right: 0;
+}
+
+.custom-select__item {
+  color: black;
+  padding: 10px 7px;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+}
+
+.routes-main__header__show-count a:not(:last-child) {
+  margin-right: 5px;
+}
+
+.routes-main__train-list__item {
+  display: flex;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.routes-main__train-list__item:hover {
+  border: 1px solid #ffa800;
+}
+
+.routes-main__train-list__item:not(:last-child) {
+  margin-bottom: 47px;
+}
+
+.train__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 197px;
+  background-color: #e4e0e9;
+  padding: 25px 0;
+}
+
+.train__info div {
+  display: flex;
+  flex-direction: column;
+}
+
+.train__info__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.train__info__icon {
+  width: 86px;
+  height: 86px;
+  /* margin-left: 20px; */
+}
+
+.train__info__train-number {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.train__info__city-start {
+  color: #928f94;
+}
+
+.train__directions {
+  width: 480px;
+  background-color: white;
+  padding: 55px 40px;
+}
+
+.train__directions__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.train__directions__row:not(:last-child) {
+  margin-bottom: 65px;
+}
+
+.train__directions__from,
+.train__directions__to {
+  display: flex;
+  flex-direction: column;
+}
+
+.train__directions__time {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.train__directions__city {
+  font-size: 18px;
+}
+
+.train__directions__railway-stantion {
+  color: #928f94;
+}
+
+.train__directions__duration {
+  position: relative;
+}
+
+.train__directions__duration__time {
+  color: #c4c4c4;
+}
+
+.train__directions__duration__time::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-image: url(./images/icons/arrow-train.svg);
+  top: 20px;
+  left: calc(50% - 15px);
+}
+
+.train__directions__duration__time.duration-time_back::after {
+  transform: scaleX(-1);
+}
+
+.train__options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 283px;
+  background-color: white;
+  padding: 20px;
+  border-left: 1px dashed #e5e5e5;
+}
+
+.train__options__seats {
+  width: 100%;
+  margin-bottom: auto;
+}
+
+.train__options__seats > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.train__options__seats__type {
+  width: 85px;
+}
+
+.train__options__seats__amount {
+  color: #ffa800;
+  font-weight: 500;
+  padding: 0 5px;
+}
+
+.train__options__seats__price {
+  position: relative;
+  width: 115px;
+  padding-right: 18px;
+  margin-bottom: -2px;
+}
+
+.train__options__seats__price::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 19px;
+  background-image: url(./images/icons/rouble.svg);
+  bottom: 5px;
+  right: 0;
+}
+
+.train__options__seats__price span {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.train__options__seats__services-list {
+  display: flex;
+  margin-bottom: 15px;
+  margin-left: auto;
+}
+
+.train__options__seats__services-list__item {
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.train__options__seats__services-list__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.train-options__wi-fi {
+  background-image: url(./images/icons/wifi.svg);
+}
+
+.train-options__express {
+  background-image: url(./images/icons/express.svg);
+}
+
+.train-options__lunch {
+  background-image: url(./images/icons/coffee.svg);
+}
+
+.train-options__conditioner {
+  background-image: url(./images/icons/conditioner.svg);
+}
+
+.train__options__proceed-ordering {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 5px 25px;
+}
+
+/* pagination */
+
+.pagination {
+  float: right;
+  margin-top: 140px;
+}
+
+.pagination__item {
+  position: relative;
+  display: inline-block;
+  width: 85px;
+  height: 75px;
+  color: #928f94;
+  line-height: 75px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  border: 2px solid #c4c4c4;
+  border-radius: 5px;
+  vertical-align: bottom;
+}
+
+.pagination__item:not(:last-child) {
+  margin-right: 35px;
+}
+
+.pagination__item:not(.pagination__between):hover {
+  border-color: #ffa800;
+  background-color: #ffa800;
+  color: white;
+}
+
+.pagination__item:not(.pagination__between):hover .pagination__prev__svg-path,
+.pagination__item:not(.pagination__between):hover .pagination__next__svg-path {
+  fill: white;
+}
+.pagination__item:not(.pagination__between):active .pagination__prev__svg-path,
+.pagination__item:not(.pagination__between):active .pagination__next__svg-path {
+  fill: #ffa800;
+}
+
+.pagination__item:not(.pagination__between):active {
+  border-color: #ffa800;
+  background-color: transparent;
+  color: #ffa800;
+}
+
+.pagination__between {
+  font-size: 50px;
+  cursor: default;
+}
+
+.pagination__prev {
+  transform: scaleX(-1);
+}
+
+.pagination__prev svg,
+.pagination__next svg {
+  position: absolute;
+  top: calc(75px / 2 - 29px / 2);
+  left: calc(85px / 2 - 18px / 2);
 }

@@ -77,41 +77,41 @@ function RouteFilters() {
       <ul className="routes-aside__service-list routes-aside__filter-item">
         <li className="service-list__item">
           <label
-            className="service-list__item__switch switch service-list__item__coupe"
-            htmlFor="coupe"
+            className="service-list__item__switch switch service-list__item__second-class"
+            htmlFor="second-class"
           >
             <span className="service-list__item__label">Купе</span>
-            <input type="checkbox" id="coupe" name="coupe" />
+            <input type="checkbox" id="second-class" name="second-class" />
             <div className="checkbox-slider"></div>
           </label>
         </li>
         <li className="service-list__item">
           <label
-            className="service-list__item__switch switch  service-list__item__reserver-seat"
-            htmlFor="reserved-seat"
+            className="service-list__item__switch switch  service-list__item__third-class"
+            htmlFor="third-class"
           >
             <span className="service-list__item__label">Плацкарт</span>
-            <input type="checkbox" id="reserved-seat" name="reserved-seat" />
+            <input type="checkbox" id="third-class" name="third-class" />
             <div className="checkbox-slider"></div>
           </label>
         </li>
         <li className="service-list__item">
           <label
-            className="service-list__item__switch switch  service-list__item__seating"
-            htmlFor="seating"
+            className="service-list__item__switch switch  service-list__item__fourth-class"
+            htmlFor="fourth-class"
           >
             <span className="service-list__item__label">Сидячий</span>
-            <input type="checkbox" id="seating" name="seating" />
+            <input type="checkbox" id="fourth-class" name="fourth-class" />
             <div className="checkbox-slider"></div>
           </label>
         </li>
         <li className="service-list__item">
           <label
-            className="service-list__item__switch switch  service-list__item__lux"
-            htmlFor="lux"
+            className="service-list__item__switch switch  service-list__item__first-class"
+            htmlFor="first-class"
           >
             <span className="service-list__item__label">Люкс</span>
-            <input type="checkbox" id="lux" name="lux" />
+            <input type="checkbox" id="first-class" name="first-class" />
             <div className="checkbox-slider"></div>
           </label>
         </li>

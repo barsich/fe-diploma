@@ -1,18 +1,21 @@
-import TrainList from "./TrainList";
+import Select from '../../Select';
+import Pagination from './Pagination';
+import TrainList from './TrainList';
 
-function RoutesMain() {
+// TODO state
+const options = ['времени', 'стоимости', 'длительности'];
+
+function RoutesMainTickets() {
   return (
     <main className="routes-main">
       <div className="routes-main__header">
         <span className="routes-main__header__finded-count">найдено 20</span>
-        <select className="routes-main__header__sort-by">
-          сортировать по:
-          <option value="time">времени</option>
-          <option value="price">стоимости</option>
-          <option value="duration">длительности</option>
-        </select>
+        <label className="routes-main__header__sort-by">
+          <span>сортировать по:</span>
+          <Select options={options} />
+        </label>
         <div className="routes-main__header__show-count">
-          показывать по:
+          <span>показывать по:</span>
           <a href="" className="show-count_5">
             5
           </a>
@@ -25,8 +28,9 @@ function RoutesMain() {
         </div>
       </div>
       <TrainList />
+      <Pagination />
     </main>
   );
 }
 
-export default RoutesMain;
+export default RoutesMainTickets;

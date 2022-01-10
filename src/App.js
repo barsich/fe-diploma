@@ -7,8 +7,12 @@ function App() {
   return (
     <Router basename="/fe-diploma">
       <Routes>
+        <Route path="/routes/seat-select" element={<RoutesPage type="seatSelect" />} />
+        <Route path="/routes/passengers" element={<RoutesPage type="passengers" />} />
+        <Route path="/routes/payment" element={<RoutesPage type="payment" />} />
+        <Route path="/routes/verification" element={<RoutesPage type="verification" />} />
+        <Route path="/routes" element={<RoutesPage type="routes" />} />
         <Route path="/" exact element={<HomePage />} />
-        <Route path="/routes" exact element={<RoutesPage />} />
       </Routes>
     </Router>
   );
