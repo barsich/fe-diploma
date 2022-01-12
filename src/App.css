@@ -119,6 +119,23 @@ input::placeholder {
   background-color: #918f94;
 }
 
+.btn_black-border {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+}
+
+.btn_black-border:hover {
+  color: #ffa800;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn_black-border:active {
+  background-color: #ffa800;
+  color: black;
+}
+
 /* header */
 
 .header {
@@ -673,6 +690,7 @@ input::placeholder {
 .routes {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   margin-top: 95px;
   margin-bottom: 190px;
 }
@@ -694,7 +712,6 @@ input::placeholder {
 
 .routes-aside__title {
   font-size: 30px;
-  font-weight: 400;
   margin-bottom: 15px;
 }
 
@@ -714,7 +731,6 @@ input::placeholder {
 
 .service-list__item__label {
   font-size: 18px;
-  font-weight: 400;
   padding-left: 90px;
 }
 
@@ -844,6 +860,8 @@ input::placeholder {
   cursor: pointer;
 }
 
+/* FIXME корявый transition цвета ::before */
+
 .checkbox-slider:before {
   position: absolute;
   content: '';
@@ -971,6 +989,7 @@ input:checked + .checkbox-slider:before {
 .train__info__train-number {
   font-size: 24px;
   font-weight: 500;
+  color: #3e3c41;
   margin: 20px 0;
 }
 
@@ -1192,4 +1211,353 @@ input:checked + .checkbox-slider:before {
   position: absolute;
   top: calc(75px / 2 - 29px / 2);
   left: calc(85px / 2 - 18px / 2);
+}
+
+/* routes main seat select */
+
+.routes-main__title {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.train-detailed {
+  width: 960px;
+  background: white;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  padding-top: 36px;
+  padding-bottom: 80px;
+}
+
+.train-detailed_there {
+  margin-bottom: 30px;
+}
+
+.train-detailed__change-train {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 15px 33px;
+  margin-left: 105px;
+  margin-bottom: 30px;
+}
+
+.train-detailed__change-train::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 76px;
+  height: 60px;
+  background-image: url(./images/icons/arrow_big.svg);
+  background-repeat: no-repeat;
+  top: 0;
+  left: -86px;
+}
+
+.train-detailed__change-train_back::before {
+  transform: scaleX(-1);
+}
+
+.train-detailed__info {
+  display: flex;
+  justify-content: center;
+  min-height: 123px;
+  background-color: #f7f6f6;
+  margin-bottom: 40px;
+}
+
+.train-detailed__info__train {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 240px;
+  padding-left: 90px;
+}
+
+.train-detailed__info__train::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/icons/train_orange.svg);
+  background-repeat: no-repeat;
+  top: calc(50% - 30px / 2);
+  left: 36px;
+}
+
+.train-detailed__info__train__train-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3e3c41;
+  margin-bottom: 5px;
+}
+
+.train-detailed__info__train__city-start {
+  color: #928f94;
+}
+
+.train-detailed__info__direction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.train-detailed__info__direction::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-image: url(./images/icons/arrow-train.svg);
+  background-repeat: no-repeat;
+  top: calc(50% - 20px / 2);
+  left: calc(50% - 30px / 2);
+}
+
+.train-detailed__info__direction__from,
+.train-detailed__info__direction__to {
+  display: flex;
+  flex-direction: column;
+  margin: 0 36px;
+}
+
+.train-detailed__info__direction__time {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.train-detailed__info__direction__city {
+  font-size: 18px;
+}
+
+.train-detailed__info__direction__railway-stantion {
+  color: #928f94;
+}
+
+.train-detailed__info__dutarion {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.train-detailed__info__dutarion {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.train-detailed__info__dutarion::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/icons/clock.svg);
+  background-repeat: no-repeat;
+  top: calc(50% - 30px / 2);
+  left: 35px;
+}
+
+.train-detailed__info__title {
+  font-size: 30px;
+  font-weight: 700;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.train-detailed__tickets-amount {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px dashed #c4c4c4;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.train-detailed__tickets-amount .train-detailed__info__title {
+  width: 100%;
+}
+
+.train-detailed__tickets-amount__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.333%;
+  padding: 20px 0;
+  border: 1px solid transparent;
+}
+
+.train-detailed__tickets-amount__item:hover {
+  border: 1px solid rgba(255, 168, 0, 0.79);
+}
+
+.train-detailed__tickets-amount__item:focus-within {
+  color: black;
+  background-color: #f7f6f6;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.train-detailed__tickets-amount__input-wrapper {
+  display: flex;
+  width: 240px;
+  margin-bottom: 23px;
+}
+
+.train-detailed__tickets-amount__label,
+.train-detailed__tickets-amount__input {
+  display: inline-block;
+  height: 50px;
+  background-color: white;
+  border-top: 1px solid #928f94;
+  border-bottom: 1px solid #928f94;
+  border-radius: 0;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 50px;
+  padding: 0;
+}
+
+.train-detailed__tickets-amount__label {
+  padding-left: 15px;
+  padding-right: 5px;
+  border-left: 1px solid #928f94;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.train-detailed__tickets-amount__input {
+  flex-grow: 1;
+  border-right: 1px solid #928f94;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+}
+
+#tickets-amount_child-free {
+  width: 10px;
+}
+
+.train-detailed__tickets-amount__description {
+  width: 240px;
+  color: transparent;
+}
+
+.train-detailed__tickets-amount__item:hover .train-detailed__tickets-amount__description {
+  color: #928f94;
+}
+
+.train-detailed__tickets-amount__item:focus-within .train-detailed__tickets-amount__description {
+  color: black;
+}
+
+.train-detailed__info__title {
+  margin-bottom: 25px;
+}
+
+.train-detailed__coach__type {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.train-detailed__coach__type__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.train-detailed__coach__type__item svg {
+  margin-bottom: 18px;
+}
+
+.train-detailed__coach__type__item span {
+  font-size: 24px;
+  color: #928f94;
+}
+
+.train-detailed__coach__seats__coaches__avaliable {
+  height: 37px;
+  line-height: 37px;
+  background-color: rgba(255, 168, 0, 0.44);
+  padding: 0 25px;
+}
+
+.train-detailed__coach__seats__coaches__avaliable span:first-child {
+  font-size: 18px;
+}
+
+.train-detailed__coach__seats__coaches__avaliable span:last-child {
+  float: right;
+}
+
+.train-detailed__coach__seats__coaches__avaliable__number {
+  font-size: 24px;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  margin-left: 5px;
+}
+
+.train-detailed__coach__seats__coaches__avaliable__number_active {
+  color: white;
+}
+
+.train-detailed__coach__seats__coaches__info {
+  display: flex;
+}
+
+.train-detailed__coach__seats__coaches__info__number {
+  width: 190px;
+  height: 160px;
+  font-size: 24px;
+  background-color: #ffd98f;
+  padding-left: 37px;
+  padding-top: 30px;
+  margin-right: 85px;
+}
+
+.train-detailed__coach__seats__coaches__info__number span {
+  display: block;
+}
+
+.train-detailed__coach__seats__coaches__info__number span:first-child {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: -15px;
+}
+
+.train-detailed__coach__seats__coaches__info__item {
+  flex: 1 1 0;
+  margin-top: 30px;
+}
+
+.seats-info__row {
+  margin-bottom: 20px;
+}
+
+.seats-info__title {
+  font-size: 18px;
+  color: #928f94;
+  margin-right: 10px;
+}
+
+.seats-info__type {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.seats-info__amount,
+.seats-info__price {
+  font-size: 24px;
+  font-weight: 700;
 }

@@ -5,7 +5,10 @@ const images = {
     second: require('./howitworks/howitworks-2.png').default,
     third: require('./howitworks/howitworks-3.png').default,
   },
-  train: require('./icons/train.svg').default,
+  train: {
+    white: require('./icons/train.svg').default,
+    orange: require('./icons/train_orange.svg').default,
+  },
 };
 
 export default images;

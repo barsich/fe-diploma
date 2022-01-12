@@ -6,7 +6,8 @@ function TrainListItem() {
     <div className="routes-main__train-list__item train">
       <div className="train__info">
         <div className="train__info__header">
-          <img className="train__info__icon" src={images.train} />
+          {/* FIXME change img to svg */}
+          <img className="train__info__icon" src={images.train.white} />
           <span className="train__info__train-number">116С</span>
         </div>
         <div className="train__info__footer">
