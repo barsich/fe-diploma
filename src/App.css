@@ -1235,7 +1235,13 @@ input:checked + .checkbox-slider:before {
   margin-bottom: 30px;
 }
 
-.train-detailed__change-train {
+.train-detailed_back .train-detailed__change-train {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.train-detailed__change-train_there,
+.train-detailed__change-train_back {
   position: relative;
   font-size: 24px;
   font-weight: 700;
@@ -1244,7 +1250,8 @@ input:checked + .checkbox-slider:before {
   margin-bottom: 30px;
 }
 
-.train-detailed__change-train::before {
+.train-detailed__change-train_there::before,
+.train-detailed__change-train_back::before {
   content: '';
   display: block;
   position: absolute;
@@ -1254,6 +1261,10 @@ input:checked + .checkbox-slider:before {
   background-repeat: no-repeat;
   top: 0;
   left: -86px;
+}
+
+.train-detailed__change-train_back {
+  margin-right: 24px;
 }
 
 .train-detailed__change-train_back::before {
@@ -1514,6 +1525,7 @@ input:checked + .checkbox-slider:before {
 
 .train-detailed__coach__seats__coaches__info {
   display: flex;
+  margin-bottom: 70px;
 }
 
 .train-detailed__coach__seats__coaches__info__number {
@@ -1541,7 +1553,7 @@ input:checked + .checkbox-slider:before {
   margin-top: 30px;
 }
 
-.seats-info__row {
+.seats-info__row:not(:last-child) {
   margin-bottom: 20px;
 }
 
@@ -1560,4 +1572,242 @@ input:checked + .checkbox-slider:before {
 .seats-info__price {
   font-size: 24px;
   font-weight: 700;
+}
+
+.seats-info__service-company {
+  color: #c4c4c4;
+}
+
+.seats-info__services {
+  display: flex;
+}
+
+.seats-info__services__item input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.seats-info__services__item {
+  position: relative;
+  margin-right: 13px;
+}
+
+.seats-info__services__item:hover input:not(:disabled) + .seats-info__services__item__icon {
+  fill: #ffa800;
+  cursor: pointer;
+}
+
+.seats-info__services__item:hover input:not(:disabled) + .seats-info__services__item__icon rect {
+  stroke: #292929;
+}
+
+.seats-info__services__item:hover input:not(:disabled) + .seats-info__services__item__icon path {
+  fill: #292929;
+}
+
+input:checked + .seats-info__services__item__icon {
+  fill: #fdb935;
+}
+
+input:checked + .seats-info__services__item__icon rect {
+  stroke: #fdb935;
+}
+
+input:checked + .seats-info__services__item__icon path {
+  fill: #f4f2f6;
+}
+
+input:disabled + .seats-info__services__item__icon {
+  fill: #fcdc9d;
+}
+
+input:disabled + .seats-info__services__item__icon rect {
+  stroke: #fcdc9d;
+}
+
+input:disabled + .seats-info__services__item__icon path {
+  fill: #928f94;
+}
+
+.seats-info__services__item__tooltip {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #292929;
+  background-color: #f5f4f6;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.seats-info__services__item__tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent transparent #f5f4f6 transparent;
+}
+
+/* coach */
+
+.train-detailed__coach__seats-selector {
+  display: flex;
+  flex-direction: column;
+}
+
+.coach {
+  display: flex;
+  border: 3px solid #999999;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.coach__coach-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coach__coach-side span {
+  transform: rotate(-90deg);
+  width: 50px;
+}
+
+.coach__top-seats,
+.coach__bottom-seats,
+.coach__side-seats {
+  position: relative;
+  display: flex;
+}
+
+.coach__seat-number {
+  width: 27px;
+  height: 27px;
+  position: relative;
+  font-size: 14px;
+  line-height: 27px;
+  font-weight: 700;
+  text-align: center;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+.coach__seat-number:not(.coach__seat-number_disabled):hover {
+  background-color: #ffd98f;
+}
+
+.coach__seat-number:nth-child(2n - 1) {
+  margin-right: 27px;
+  border-left: 3px solid #999999;
+}
+
+.coach__seat-number:last-child,
+.coach__side-seats_empty {
+  border-right: 3px solid #999999;
+}
+
+.coach__side-seats_empty {
+  width: 100%;
+  border-left: 3px solid #999999;
+}
+
+.coach__bottom-seats .coach__seat-number {
+  border-bottom: 3px solid #999999;
+}
+
+.coach__seat-number_disabled {
+  color: #f2f2f2;
+  background-color: #cccccc;
+  cursor: default;
+}
+
+.coach__seat-number_selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #ffa800;
+}
+
+.coach_first-class .coach__seat-number {
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.coach__empty-cell_hallway,
+.coach__side-seats {
+  height: 27px;
+}
+
+.coach__side-seats .coach__seat-number {
+  width: 100%;
+  margin-right: 0;
+}
+
+.coach__fourth-class__row {
+  display: flex;
+}
+
+.coach__fourth-class__row .coach__seat-number {
+  height: 19px;
+  line-height: 19px;
+  border: none;
+}
+
+.coach__seat-number_empty {
+  width: 27px;
+  height: 19px;
+}
+
+.coach__first-row,
+.coach__second-row,
+.coach_fourth-class .coach__empty-cell_hallway {
+  border-left: 3px solid #999999;
+  border-right: 3px solid #999999;
+}
+
+.coach__third-row {
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+
+.coach__fourth-row {
+  border-left: 3px solid transparent;
+  border-right: 3px solid #999999;
+}
+
+.coach__first-row {
+  padding: 3px 5px;
+}
+
+.coach__second-row {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.coach__third-row {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.coach__fourth-row {
+  padding: 3px 5px;
+}
+
+.coach__first-row .coach__seat-number:not(:last-child),
+.coach__second-row .coach__seat-number:not(:last-child),
+.coach__third-row .coach__seat-number,
+.coach__third-row .coach__seat-number_empty:not(:last-child),
+.coach__fourth-row .coach__seat-number:not(:last-child) {
+  margin-right: 13px;
 }
