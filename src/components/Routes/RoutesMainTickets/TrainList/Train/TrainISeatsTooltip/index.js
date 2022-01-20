@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TrainItemSeatsTooltip() {
+function TrainSeatsTooltip() {
   return (
     <div className="train__options__seats__tooltip">
       <table>
@@ -19,4 +19,4 @@ function TrainItemSeatsTooltip() {
   );
 }
 
-export default TrainItemSeatsTooltip;
+export default TrainSeatsTooltip;

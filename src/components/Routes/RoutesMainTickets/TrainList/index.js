@@ -1,12 +1,12 @@
-import TrainListItem from "./TrainListItem"
+import Train from './Train';
 
 function TrainList() {
   return (
     <div className="routes-main__train-list">
       {/* TODO trains.map() */}
-      <TrainListItem />
+      <Train pageType={'routes'} />
     </div>
-  )
+  );
 }
 
-export default TrainList
+export default TrainList;

@@ -1,10 +1,13 @@
+import RouteDetails from './RouteDetails';
 import RouteFilters from './RouteFilters';
 
-function RoutesAside() {
+function RoutesAside({ type }) {
   return (
-    <aside className="routes-aside">
-      <RouteFilters />
-    </aside>
+    <>
+      {type === 'filters' && <RouteFilters />}
+      {type === 'details' && <RouteDetails />}
+      {type === 'payment' && <RouteDetails />}
+    </>
   );
 }
 

@@ -63,8 +63,8 @@ function RouteFilters() {
 
   // TODO collapsed to-from
   return (
-    <>
-      <div className="routes-aside__date routes-aside__filter-item">
+    <aside className="routes-aside routes-aside_filters">
+      <div className="routes-aside__date routes-aside__item">
         <h3 className="routes-aside__title">Дата поездки</h3>
         <input
           type="date"
@@ -74,7 +74,7 @@ function RouteFilters() {
         <h3 className="routes-aside__title">Дата возвращения</h3>
         <input type="date" className="routes-aside__date__input input__date-to" name="date-to" />
       </div>
-      <ul className="routes-aside__service-list routes-aside__filter-item">
+      <ul className="routes-aside__service-list routes-aside__item">
         <li className="service-list__item">
           <label
             className="service-list__item__switch switch service-list__item__second-class"
@@ -136,31 +136,31 @@ function RouteFilters() {
           </label>
         </li>
       </ul>
-      <div className="routes-aside__price routes-aside__filter-item">
+      <div className="routes-aside__price routes-aside__item">
         <h3 className="routes-aside__title">Стоимость</h3>
         <Range {...rangeStyleOptions} {...rangeOptionsPrice} />
       </div>
-      <div className="routes-aside__direction-there routes-aside__filter-item">
-        <div className="routes-aside__direction-there__header routes-aside__filter-item__header">
+      <div className="routes-aside__direction-there routes-aside__item">
+        <div className="routes-aside__direction-there__header routes-aside__item__header">
           <h3 className="routes-aside__title">Туда</h3>
-          <div className="routes-aside__filter-item__header__collapse-button"></div>
+          <div className="routes-aside__item__header__collapse-button"></div>
         </div>
         <span className="routes-aside__span">Время отбытия</span>
         <Range {...rangeStyleOptions} {...rangeOptionsTime} />
         <span className="routes-aside__span">Время прибытия</span>
         <Range {...rangeStyleOptions} {...rangeOptionsTime} />
       </div>
-      <div className="routes-aside__direction-back routes-aside__filter-item">
-        <div className="routes-aside__direction-back__header routes-aside__filter-item__header">
+      <div className="routes-aside__direction-back routes-aside__item">
+        <div className="routes-aside__direction-back__header routes-aside__item__header">
           <h3 className="routes-aside__title">Обратно</h3>
-          <div className="routes-aside__filter-item__header__collapse-button"></div>
+          <div className="routes-aside__item__header__collapse-button"></div>
         </div>
         <span className="routes-aside__span">Время отбытия</span>
         <Range {...rangeStyleOptions} {...rangeOptionsTime} />
         <span className="routes-aside__span">Время прибытия</span>
         <Range {...rangeStyleOptions} {...rangeOptionsTime} />
       </div>
-    </>
+    </aside>
   );
 }
 

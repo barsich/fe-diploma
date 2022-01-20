@@ -120,6 +120,7 @@ input::placeholder {
 }
 
 .btn_black-border {
+  font-weight: 700;
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
@@ -685,7 +686,7 @@ input::placeholder {
   font-weight: 300;
 }
 
-/* routes aside */
+/* routes aside filters */
 
 .routes {
   display: flex;
@@ -702,11 +703,11 @@ input::placeholder {
   padding: 15px 0;
 }
 
-.routes-aside__filter-item {
+.routes-aside__item {
   padding: 25px 30px;
 }
 
-.routes-aside__filter-item:not(:last-child) {
+.routes-aside__item:not(:last-child) {
   border-bottom: 1px solid white;
 }
 
@@ -801,20 +802,22 @@ input::placeholder {
   margin-bottom: 43px;
 }
 
-.routes-aside__filter-item__header {
+.routes-aside__item__header {
   position: relative;
   display: flex;
   justify-content: space-between;
   padding-left: 44px;
 }
 
-.routes-aside__filter-item__header::before {
+.routes-aside__item__header::before {
   position: absolute;
   content: '';
   width: 32px;
   height: 26px;
   left: 0;
   top: 5.5px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .routes-aside__direction-there__header .routes-aside__title,
@@ -831,13 +834,181 @@ input::placeholder {
   transform: scaleX(-1);
 }
 
-.routes-aside__filter-item__header__collapse-button {
+.routes-aside__item__header__collapse-button {
   width: 37px;
   height: 37px;
   background-image: url(./images/icons/collapse.svg);
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 15px;
+}
+
+/* routes aside details */
+
+.routes-aside_details {
+  padding: 0;
+}
+
+.routes-aside_details .routes-aside__item:first-child {
+  height: 107px;
+}
+
+.routes-aside_details .routes-aside__item__header {
+  margin-bottom: 35px;
+}
+
+.routes-aside__details-title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 56px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.routes-aside__date {
+  font-size: 18px;
+  line-height: 45px;
+}
+
+.routes-aside__details__item__row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.routes-aside__details__item__row:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.routes-aside__details__item__row:last-child {
+  align-items: flex-end;
+}
+
+.routes-aside__details__item__row__title {
+  font-size: 18px;
+  color: #e5e5e5;
+}
+
+.routes-aside__details__item__column_right,
+.routes-aside__details__item__column_left {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.routes-aside__details__item__column_right {
+  align-items: flex-end;
+  text-align: end;
+}
+
+.routes-aside__details__item__column_left {
+  align-items: flex-start;
+}
+
+.routes-aside__details__item__train-number {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.routes-aside__details__item__train-route {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.routes-aside__direction-there
+  .routes-aside__details__item
+  .routes-aside__details__item__row:nth-child(2),
+.routes-aside__direction-back
+  .routes-aside__details__item
+  .routes-aside__details__item__row:nth-child(2) {
+  margin-bottom: 70px;
+}
+
+.routes-aside__details__train-to__time,
+.routes-aside__details__train-from__time {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.routes-aside__details__train-to__date,
+.routes-aside__details__train-from__date {
+  font-size: 18px;
+  color: #928f94;
+}
+
+.routes-aside__details__duration {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.routes-aside__details__duration::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-image: url(./images/icons/arrow-train.svg);
+  top: 27px;
+  left: calc(50% - 15px);
+}
+
+.routes-aside__direction-back .routes-aside__details__duration::after {
+  transform: scaleX(-1);
+}
+
+.routes-aside__details__train-to__city,
+.routes-aside__details__train-from__city {
+  font-size: 18px;
+}
+
+.routes-aside__details__train-to__railway-stantion,
+.routes-aside__details__train-from__railway-stantion {
+  color: #928f94;
+}
+
+.routes-aside__passengers__header::before {
+  background-image: url(./images/icons/passenger.svg);
+}
+
+.routes-aside__passengers__title {
+  font-size: 18px;
+}
+
+.routes-aside__passengers__desc {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.routes-aside__total-price .routes-aside__details__item__column_right,
+.routes-aside__passengers .routes-aside__details__item__column_right {
+  flex-direction: row;
+  align-items: center;
+}
+
+.routes-aside__passengers .routes-aside__details__item__column_right svg {
+  margin-left: 7px;
+}
+
+.routes-aside__total-price .routes-aside__details__item__column_right svg {
+  margin-left: 14px;
+}
+
+.routes-aside__total-price__title {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.routes-aside__total-price__desc {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffa800;
+}
+
+.routes-aside__total-price__desc.routes-aside__details__item__column_right {
+  max-width: unset;
 }
 
 /* checkbox slider */
@@ -1654,6 +1825,15 @@ input:disabled + .seats-info__services__item__icon path {
   border-color: transparent transparent #f5f4f6 transparent;
 }
 
+.routes-main__proceed-button {
+  float: right;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 15px 70px;
+  margin-top: 100px;
+}
+
 /* coach */
 
 .train-detailed__coach__seats-selector {
@@ -1810,4 +1990,415 @@ input:disabled + .seats-info__services__item__icon path {
 .coach__third-row .coach__seat-number_empty:not(:last-child),
 .coach__fourth-row .coach__seat-number:not(:last-child) {
   margin-right: 13px;
+}
+
+/* routes main passengers */
+
+.routes-main__passenger-card {
+  display: flex;
+  flex-direction: column;
+  color: #292929;
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.routes-main__passenger-card:not(:last-of-type) {
+  margin-bottom: 45px;
+}
+
+.routes-main__passenger-card input {
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #928f94;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.routes-main__passenger-card__header,
+.routes-main__add-passenger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 107px;
+  background-color: #f9f9f9;
+  font-size: 30px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+.routes-main__add-passenger {
+  height: 97px;
+  background-color: white;
+  color: #292929;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.routes-main__passenger-card_closed .routes-main__passenger-card__header {
+  height: 97px;
+  background-color: white;
+}
+
+.routes-main__passenger-card__header__title {
+  position: relative;
+  padding-left: 48px;
+}
+
+.routes-main__passenger-card__header__title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url(./images/icons/collapse_round.svg);
+  top: 3px;
+  left: 0;
+}
+
+.routes-main__passenger-card__header__delete-button,
+.routes-main__add-passenger__add-button {
+  color: #928f94;
+  background-color: transparent;
+  border: none;
+}
+
+.routes-main__add-passenger__add-button {
+  color: #ffa800;
+  transform: rotate(45deg);
+}
+
+.routes-main__passenger-card_closed .routes-main__passenger-card__header__title::after {
+  background-image: url(./images/icons/expand_round.svg);
+}
+
+.routes-main__passenger-card_closed .routes-main__passenger-card__header__delete-button {
+  display: none;
+}
+
+.routes-main__passenger-card__personal-info {
+  border-top: 1px dashed #928f94;
+  padding: 38px 35px 31px;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 45px;
+}
+
+.routes-main__passenger-card__personal-info__age,
+.routes-main__passenger-card__document__type {
+  appearance: none;
+  width: 250px;
+  font-size: 24px;
+  border: 1px solid #928f94;
+  border-radius: 5px;
+  padding: 10px 13px;
+  outline: none;
+}
+
+.select-wrapper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #928f94 transparent transparent transparent;
+  top: calc(50% - 3px);
+  right: 20px;
+}
+
+.routes-main__passenger-card__personal-info label,
+.routes-main__passenger-card__personal-info__gender__title,
+.routes-main__passenger-card__document label {
+  color: #928f94;
+}
+
+.routes-main__passenger-card__personal-info__full-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.routes-main__passenger-card__personal-info__full-name {
+  margin-bottom: 50px;
+}
+
+.routes-main__passenger-card__personal-info__full-name input {
+  width: 280px;
+}
+
+.routes-main__passenger-card__personal-info__gender-and-dob {
+  display: flex;
+  margin-bottom: 45px;
+}
+
+.routes-main__passenger-card__personal-info__gender {
+  margin-right: 35px;
+}
+
+.routes-main__passenger-card__personal-info__gender label {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 50px;
+  border: 1px solid #928f94;
+  color: black;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.routes-main__passenger-card__personal-info__gender label:not(:first-of-type) {
+  margin-left: -1px;
+}
+
+.routes-main__passenger-card__personal-info__gender label:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.routes-main__passenger-card__personal-info__gender label:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.routes-main__passenger-card__personal-info__gender input,
+.routes-main__passenger-card__personal-info__limited-mobility input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.routes-main__passenger-card__personal-info__gender input:checked + label {
+  background-color: #ffa800;
+}
+
+.routes-main__passenger-card__personal-info__limited-mobility label {
+  position: relative;
+  padding-left: 48px;
+}
+
+.routes-main__passenger-card__personal-info__limited-mobility label::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 28px;
+  height: 28px;
+  border: 1px solid #928f94;
+  border-radius: 5px;
+  top: calc(50% - 15px);
+  cursor: pointer;
+}
+
+.routes-main__passenger-card__personal-info__limited-mobility input:checked + label::before {
+  border-color: #ffa800;
+  background-image: url(./images/icons/checkmark.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.routes-main__passenger-card__document {
+  display: flex;
+  border-top: 1px dashed #928f94;
+  border-bottom: 1px dashed #928f94;
+  padding: 35px;
+}
+
+.routes-main__passenger-card__document label:not(:first-child) {
+  margin-left: 35px;
+}
+
+.routes-main__passenger-card__document__type {
+  margin-top: 10px;
+}
+
+.routes-main__passenger-card__document input {
+  letter-spacing: 0.5ch;
+  background: repeating-linear-gradient(
+      to right,
+      #c4c4c4 0 1ch,
+      transparent 0.5ch calc(1ch + 0.5ch)
+    )
+    bottom/100% 2px content-box no-repeat;
+  background-position: 0 75%;
+}
+
+#passport-series {
+  width: calc(4 * (1ch + 0.5ch) + 30px);
+}
+
+#passport-number {
+  width: calc(6 * (1ch + 0.5ch) + 30px);
+}
+
+#birth-certificate {
+  width: calc(12 * (1ch + 0.5ch) + 30px);
+}
+
+.routes-main__passenger-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 117px;
+  padding: 0 30px;
+}
+
+.routes-main__passenger-card__footer__next-passenger-button {
+  height: 52px;
+  font-size: 24px;
+  background-color: transparent;
+  padding: 0 23px;
+}
+
+.routes-main__passenger-card__footer_error {
+  justify-content: start;
+  background-color: rgba(255, 61, 0, 0.38);
+}
+
+.routes-main__passenger-card__footer_correct {
+  justify-content: space-between;
+  color: white;
+  background-color: #b2f6a1;
+}
+
+.routes-main__passenger-card__footer__message {
+  position: relative;
+  padding-left: 48px;
+  font-size: 18px;
+}
+
+.routes-main__passenger-card__footer__message::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url(./images/icons/error.svg);
+  top: calc(50% - 16px);
+  left: 0;
+}
+
+.routes-main__passenger-card__footer_correct .routes-main__passenger-card__footer__message::after {
+  background-image: url(./images/icons/correct.svg);
+}
+
+.routes-main__passenger-card__footer__message span {
+  font-weight: 700;
+}
+
+/* routes main payment */
+
+.routes-main__payment {
+  display: flex;
+  flex-direction: column;
+  color: #292929;
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.routes-main__payment > div:not(:last-child),
+.routes-main__payment__personal-info__payment-method:not(:last-child) {
+  border-bottom: 1px dashed #928f94;
+}
+
+.routes-main__payment__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 107px;
+  background-color: #f9f9f9;
+  font-size: 30px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+.routes-main__payment label {
+  color: #928f94;
+}
+
+.routes-main__payment input {
+  height: 50px;
+  font-size: 24px;
+  border: 1px solid #928f94;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.routes-main__payment__body {
+  padding: 30px 35px 90px;
+}
+
+.routes-main__payment__personal-info__full-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 54px;
+}
+
+.routes-main__payment__personal-info__full-name input {
+  width: 280px;
+}
+
+.routes-main__payment__personal-info__phone {
+  margin-bottom: 38px;
+}
+
+.routes-main__payment__personal-info__phone input,
+.routes-main__payment__personal-info__mail input {
+  width: 360px;
+}
+
+.routes-main__payment__personal-info__payment-method {
+  padding: 50px 35px 80px 35px;
+}
+
+.routes-main__payment__personal-info__payment-method input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.routes-main__payment__personal-info__payment-method label {
+  position: relative;
+  font-size: 24px;
+  padding-left: 48px;
+}
+
+.routes-main__payment__personal-info__payment-method label::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 28px;
+  height: 28px;
+  border: 1px solid #928f94;
+  border-radius: 5px;
+  top: calc(50% - 15px);
+  cursor: pointer;
+}
+
+.routes-main__payment__personal-info__payment-method input:checked + label::before {
+  border-color: #ffa800;
+  background-image: url(./images/icons/checkmark.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.routes-main__payment__personal-info__payment-method__list {
+  display: flex;
+  margin-top: 24px;
+}
+
+.routes-main__payment__personal-info__payment-method__item {
+  max-width: 190px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.routes-main__payment__personal-info__payment-method__item:not(:last-child) {
+  margin-right: 100px;
 }

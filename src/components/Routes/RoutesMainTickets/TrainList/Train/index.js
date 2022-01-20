@@ -1,13 +1,13 @@
 import React from 'react';
 import images from '../../../../../images';
 
-function TrainListItem() {
+function Train({ item, pageType }) {
   return (
     <div className="routes-main__train-list__item train">
       <div className="train__info">
         <div className="train__info__header">
           {/* FIXME change img to svg */}
-          <img className="train__info__icon" src={images.train.white} />
+          <img className="train__info__icon" src={images.train.white} alt="" />
           <span className="train__info__train-number">116С</span>
         </div>
         <div className="train__info__footer">
@@ -86,12 +86,19 @@ function TrainListItem() {
           </li>
           <li className="train__options__seats__services-list__item train-options__lunch">Обед</li>
         </ul>
-        <button className="train__options__proceed-ordering btn btn_orange-white">
-          Выбрать места
-        </button>
+        {pageType === 'routes' && (
+          <button className="train__options__proceed-ordering btn btn_orange-white">
+            Выбрать места
+          </button>
+        )}
+        {pageType === 'verification' && (
+          <button className="routes-main__verification__change btn btn_black-border">
+            Изменить
+          </button>
+        )}
       </div>
     </div>
   );
 }
 
-export default TrainListItem;
+export default Train;
