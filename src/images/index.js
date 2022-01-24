@@ -9,6 +9,9 @@ const images = {
     white: require('./icons/train.svg').default,
     orange: require('./icons/train_orange.svg').default,
   },
+  passenger: {
+    round: require('./icons/passenger-round.svg').default,
+  }
 };
 
 export default images;

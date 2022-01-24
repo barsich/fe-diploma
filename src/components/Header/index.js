@@ -13,6 +13,9 @@ export default function Header({ pageType }) {
     case 'routes':
       headerClass = 'header-routes';
       break;
+    case 'orderingSuccedeed':
+      headerClass = 'header-ordering-succedeed';
+      break;
 
     default:
       break;
