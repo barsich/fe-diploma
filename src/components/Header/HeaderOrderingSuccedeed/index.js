@@ -1,5 +1,5 @@
-function HeaderOrderingSuccedeed() {
-  return <div className="header-ordering-succedeed__block"></div>;
+function HeaderOrderingSucceeded() {
+  return <div className="header-ordering-succeeded__block"></div>;
 }
 
-export default HeaderOrderingSuccedeed;
+export default HeaderOrderingSucceeded;

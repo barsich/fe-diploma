@@ -11,6 +11,11 @@ const images = {
   },
   passenger: {
     round: require('./icons/passenger-round.svg').default,
+  },
+  orderingSucceeded: {
+    first: require('./ordering-succeeded/ordering-succeeded-1.svg').default,
+    second: require('./ordering-succeeded/ordering-succeeded-2.svg').default,
+    third: require('./ordering-succeeded/ordering-succeeded-3.svg').default,
   }
 };
 
