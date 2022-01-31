@@ -1,9 +1,8 @@
 const images = {
-  // FIXME howitworks images to svg
   howitworks: {
-    first: require('./howitworks/howitworks-1.png').default,
-    second: require('./howitworks/howitworks-2.png').default,
-    third: require('./howitworks/howitworks-3.png').default,
+    first: require('./howitworks/howitworks-1.svg').default,
+    second: require('./howitworks/howitworks-2.svg').default,
+    third: require('./howitworks/howitworks-3.svg').default,
   },
   train: {
     white: require('./icons/train.svg').default,

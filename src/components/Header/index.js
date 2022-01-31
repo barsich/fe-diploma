@@ -55,7 +55,6 @@ export default function Header({ pageType }) {
           </ul>
         </Wrapper>
       </div>
-      {/* TODO компоненты в зависимости от типа страницы */}
       {pageType === 'main' && (
         <Wrapper>
           <HeaderMain />
