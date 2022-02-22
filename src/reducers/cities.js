@@ -1,11 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const fetchCities = createAsyncThunk('cities', async (value) => {
-  // fetch( 'https://fe-diplom.herokuapp.com/routes/cities?name=мос' )
+  console.log('fetchCities createAsyncThunk');
   let url = `${process.env.REACT_APP_API_URL}routes/cities?name=${value}`;
   const response = await fetch(url);
   const data = await response.json();
-  // console.log(data);
   return data;
 });
 
@@ -31,9 +30,11 @@ const cities = createSlice({
         state.status = 'failed';
       })
       .addCase(fetchCities.fulfilled, (state, action) => {
+        console.log('fetchCities.fulfilled', action.payload);
         if (action.payload.error) {
           return state; // TODO выводить ошибку?
         }
+        // console.log(action.payload);
         state.cities = [...action.payload];
         state.status = 'succeeded';
       });

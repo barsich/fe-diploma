@@ -277,14 +277,6 @@ input::placeholder {
   cursor: pointer;
 }
 
-.route-selector__city-list__item:not(:last-child) {
-  /* margin-bottom: 10px; */
-}
-
-/* input:focus + .route-selector__city-list {
-  display: block;
-} */
-
 .route-selector__swapper {
   position: absolute;
   width: 24px;
@@ -306,6 +298,10 @@ input::placeholder {
   font-weight: 700;
 }
 
+.route-selector__input-wrapper {
+  display: inline-block;
+}
+
 .route-selector__direction-from,
 .route-selector__direction-to {
   background-image: url(./images/icons/point.svg);
@@ -316,7 +312,7 @@ input::placeholder {
   background-image: url(./images/icons/calendar.svg);
 }
 
-.route-selector__direction-from,
+.route-selector__input-wrapper:first-of-type,
 .route-selector__date-from {
   margin-right: 37px;
 }
@@ -379,7 +375,7 @@ input::placeholder {
   border-top: 1px solid white;
   border-right: 1px solid white;
   border-top-right-radius: 3px;
-  z-index: 100;
+  z-index: 10;
 }
 
 .stages__item_active:not(:last-child)::after {
@@ -401,6 +397,10 @@ input::placeholder {
 }
 
 /* datepicker (override react-datepicker styles) */
+
+.react-datepicker-popper {
+  z-index: 100;
+}
 
 .react-datepicker__day-names {
   display: none;
@@ -1239,7 +1239,6 @@ input:checked + .checkbox-slider:before {
 .train__info__icon {
   width: 86px;
   height: 86px;
-  /* margin-left: 20px; */
 }
 
 .train__info__train-number {

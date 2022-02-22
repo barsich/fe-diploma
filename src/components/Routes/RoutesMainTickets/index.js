@@ -1,18 +1,30 @@
 import Select from '../../Select';
 import Pagination from './Pagination';
 import TrainList from './TrainList';
+import { useSelector } from 'react-redux';
+import { createQuery } from '../../../utils';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchRoutes } from '../../../reducers/routes';
 
 // TODO state
-const options = ['времени', 'стоимости', 'длительности'];
+const sorting = ['времени', 'стоимости', 'длительности'];
 
 function RoutesMainTickets() {
+  const dispatch = useDispatch();
+  const { options } = useSelector((state) => state.routes);
+
+  useEffect(() => {
+    dispatch(fetchRoutes(createQuery(options)));
+  }, [dispatch]);
+
   return (
     <main className="routes-main">
       <div className="routes-main__header">
         <span className="routes-main__header__finded-count">найдено 20</span>
         <label className="routes-main__header__sort-by">
           <span>сортировать по:</span>
-          <Select options={options} />
+          <Select options={sorting} />
         </label>
         <div className="routes-main__header__show-count">
           <span>показывать по:</span>

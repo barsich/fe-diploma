@@ -1,16 +1,12 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import cities from '../reducers/cities';
+import routes from '../reducers/routes';
 
 const reducer = combineReducers({
   cities: cities.reducer,
+  routes: routes.reducer,
 });
-// const reducer = combineReducers({
-//   topItemListReducer: topItemList.reducer,
-//   itemListReducer: itemList.reducer,
-//   categoriesListReducer: categoriesList.reducer,
-//   cartItemListReducer: cartItemList.reducer,
-// });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
