@@ -1,17 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const fetchRoutes = createAsyncThunk('cities', async (query) => {
-  console.log('fetchRoutes createAsyncThunk');
-  // let url = `${process.env.REACT_APP_API_URL}routes?${query}`;
-  let url = `${process.env.REACT_APP_API_URL}routes?from_city_id=6212d3c15fc56b48553d43bc&to_city_id=6212d3c15fc56b48553d43bd`;
+const fetchRoutes = createAsyncThunk('routes', async (query) => {
+  let url = `${process.env.REACT_APP_API_URL}routes?${query}`;
+  // let url = `${process.env.REACT_APP_API_URL}routes?from_city_id=6212d3c15fc56b48553d43bc&to_city_id=6212d3c15fc56b48553d43bd`;
   // console.log(url);
   const response = await fetch(url);
   const data = await response.json();
+  // console.log(data);
   return data;
 });
 
 const initialState = {
   routes: [],
+  count: 0,
   status: 'idle',
   options: {
     from_city_id: null,             // Идентификатор города, откуда планируется путешествие (обязательный)
@@ -68,11 +69,11 @@ const routes = createSlice({
         state.status = 'failed';
       })
       .addCase(fetchRoutes.fulfilled, (state, action) => {
-        console.log('fetchRoutes.fulfilled',action.payload)
         if (action.payload.error) {
           return state; // TODO выводить ошибку?
         }
-        state.routes = [...action.payload];
+        state.count = action.payload.total_count;
+        state.routes = [...action.payload.items];
         state.status = 'succeeded';
       });
   },

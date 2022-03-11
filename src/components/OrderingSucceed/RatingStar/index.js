@@ -1,11 +1,11 @@
 import React from 'react';
 
 function RatingStar() {
-  // className="succeed__card__footer__rate__star succeed__card__footer__rate__star_active"
+  // className="succeed-card__rate-star succeed-card__rate-star_active"
   // TODO active класс всем предыдущим
   return (
     <svg
-      className="succeed__card__footer__rate__star"
+      className="succeed-card__rate-star"
       width="46"
       height="44"
       viewBox="0 0 46 44"

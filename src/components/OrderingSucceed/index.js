@@ -6,9 +6,9 @@ function OrderingSucceeded() {
     <div className="succeed">
       <h1 className="succeed__title">Благодарим Вас за заказ!</h1>
       <div className="succeed__card">
-        <div className="succeed__card__header">
-          <p className="succeed__card__header__order-number">№Заказа 285АА</p>
-          <p className="succeed__card__header__total-price">
+        <div className="succeed-card__header">
+          <p className="succeed-card__order-number">№Заказа 285АА</p>
+          <p className="succeed-card__total-price">
             сумма
             <span>
               7 760
@@ -27,37 +27,37 @@ function OrderingSucceeded() {
             </span>
           </p>
         </div>
-        <div className="succeed__card__instructions">
-          <div className="succeed__card__instructions__item">
+        <div className="succeed-card__instructions">
+          <div className="succeed-card__instructions-item">
             <img src={images.orderingSucceeded.first} alt="" />
             <p>
               билеты будут отправлены
               <br /> на ваш <span>e-mail</span>
             </p>
           </div>
-          <div className="succeed__card__instructions__item">
+          <div className="succeed-card__instructions-item">
             <img src={images.orderingSucceeded.second} alt="" />
             <p>
               <span>распечатайте</span> и сохраняйте билеты до даты поездки
             </p>
           </div>
-          <div className="succeed__card__instructions__item">
+          <div className="succeed-card__instructions-item">
             <img src={images.orderingSucceeded.third} alt="" />
             <p>
               <span>предьявите</span> распечатанные билеты при посадке
             </p>
           </div>
         </div>
-        <div className="succeed__card__info">
+        <div className="succeed-card__info">
           <h2>Ирина Эдуардовна!</h2>
           <p>
             Ваш заказ успешно оформлен.
             <br /> В ближайшее время с вами свяжется наш оператор для подтверждения.
           </p>
-          <p className='succeed__card__info__thank-you'>Благодарим Вас за оказанное доверие и желаем приятного путешествия!</p>
+          <p className='succeed-card__thank-you'>Благодарим Вас за оказанное доверие и желаем приятного путешествия!</p>
         </div>
-        <div className="succeed__card__footer">
-          <div className="succeed__card__footer__rate">
+        <div className="succeed-card__footer">
+          <div className="succeed-card__rate">
             <span>Оценить сервис</span>
             {/* TODO to array */}
             <RatingStar />
@@ -66,7 +66,7 @@ function OrderingSucceeded() {
             <RatingStar />
             <RatingStar />
           </div>
-          <button className="succeed__card__footer__back-to-homepage btn">
+          <button className="succeed-card__back-to-homepage btn">
             вернуться на главную
           </button>
         </div>

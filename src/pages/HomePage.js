@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import HowItWorks from '../components/HowItWorks';
 import Reviews from '../components/Reviews';
 
-export default function HomePage() {
+function HomePage() {
   return (
     <>
       <style>{'body { background-color: white; }'}</style>
@@ -16,3 +16,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export default HomePage;

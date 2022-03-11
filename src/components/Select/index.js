@@ -5,6 +5,7 @@ import SelectOption from './SelectOption';
  * Кастомная выпадашка select
  */
 
+// TODO custom
 function Select({ options }) {
 
   // TODO logic: https://dev.to/ashwinkumar0505/create-custom-select-component-in-react-compound-components-pattern-typescript-3kdd

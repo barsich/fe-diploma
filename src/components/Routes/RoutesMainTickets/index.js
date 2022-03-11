@@ -16,25 +16,25 @@ function RoutesMainTickets() {
 
   useEffect(() => {
     dispatch(fetchRoutes(createQuery(options)));
-  }, [dispatch]);
+  }, [dispatch, options]);
 
   return (
     <main className="routes-main">
       <div className="routes-main__header">
-        <span className="routes-main__header__finded-count">найдено 20</span>
-        <label className="routes-main__header__sort-by">
+        <span className="routes-header__finded-count">найдено 20</span>
+        <label className="routes-header__sort-by">
           <span>сортировать по:</span>
           <Select options={sorting} />
         </label>
-        <div className="routes-main__header__show-count">
+        <div className="routes-header__show-count">
           <span>показывать по:</span>
-          <a href="" className="show-count_5">
+          <a href="/" className="routes-header__show-count_5">
             5
           </a>
-          <a href="" className="show-count_10">
+          <a href="/" className="routes-header__show-count_10">
             10
           </a>
-          <a href="" className="show-count_20">
+          <a href="/" className="routes-header__show-count_20">
             20
           </a>
         </div>

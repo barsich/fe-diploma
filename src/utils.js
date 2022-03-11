@@ -14,6 +14,5 @@ export function createQuery(data) {
 }
 
 export function getFormattedDate(date) {
-  console.log(date);
   return moment(date).format('YYYY-MM-DD');
 }

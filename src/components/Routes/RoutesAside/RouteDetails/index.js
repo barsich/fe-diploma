@@ -31,7 +31,7 @@ function RouteDetails() {
               <span className="routes-aside__details__train-from__date">30.08.2018</span>
             </div>
             <div className="routes-aside__details__duration">
-              <span className="routes-aside__details__duration__time duration-time_there">
+              <span className="routes-aside__details__duration__time ">
                 9 : 42
               </span>
             </div>

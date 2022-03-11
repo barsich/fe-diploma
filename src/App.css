@@ -211,12 +211,12 @@ input::placeholder {
   margin-top: auto;
 }
 
-.header-main__block__route-selector,
-.header-routes__block__route-selector {
+.header-main-block__route-selector,
+.header-routes__route-selector {
   background-color: rgba(41, 41, 41, 0.8);
 }
 
-.header-main__block__route-selector {
+.header-main-block__route-selector {
   padding: 85px 25px 53px 20px;
   margin-right: -25px;
 }
@@ -255,7 +255,7 @@ input::placeholder {
   margin-bottom: 92px;
 }
 
-.route-selector__city-list {
+.route-selector__cities {
   position: absolute;
   width: 325px;
   top: 122px;
@@ -268,12 +268,12 @@ input::placeholder {
   z-index: 100;
 }
 
-.route-selector__city-list__item {
+.route-selector__city {
   padding: 5px 25px;
 }
 
-.route-selector__city-list__item:hover {
-  background-color: #E4E0E9;
+.route-selector__city:hover {
+  background-color: #e4e0e9;
   cursor: pointer;
 }
 
@@ -286,7 +286,7 @@ input::placeholder {
   left: calc(50% - 12px);
 }
 
-.header-main__block__tagline {
+.header-main-block__tagline {
   color: white;
   font-weight: 200;
   font-size: 72px;
@@ -298,13 +298,24 @@ input::placeholder {
   font-weight: 700;
 }
 
-.route-selector__input-wrapper {
+/* .route-selector__input-wrapper {
+  position: absolute;
   display: inline-block;
-}
+} */
+
+/* .route-selector__input-wrapper:nth-of-type(2){
+  left: 360px
+} */
 
 .route-selector__direction-from,
 .route-selector__direction-to {
   background-image: url(./images/icons/point.svg);
+  text-transform: uppercase;
+}
+
+.route-selector__direction-from::placeholder,
+.route-selector__direction-to::placeholder {
+  text-transform: none;
 }
 
 .route-selector__date-from,
@@ -312,7 +323,7 @@ input::placeholder {
   background-image: url(./images/icons/calendar.svg);
 }
 
-.route-selector__input-wrapper:first-of-type,
+.route-selector__direction-from,
 .route-selector__date-from {
   margin-right: 37px;
 }
@@ -334,7 +345,7 @@ input::placeholder {
   float: right;
 }
 
-.header-routes__block__stages {
+.header-routes__stages {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
@@ -350,7 +361,7 @@ input::placeholder {
   overflow: hidden;
 }
 
-.stages__item {
+.header-routes__stage {
   position: relative;
   display: flex;
   justify-content: center;
@@ -363,7 +374,7 @@ input::placeholder {
   background-color: #3e3c41;
 }
 
-.stages__item:not(:last-child)::after {
+.header-routes__stage:not(:last-child)::after {
   content: '';
   display: block;
   position: absolute;
@@ -386,7 +397,7 @@ input::placeholder {
   background-color: #ffa800;
 }
 
-.stages__item__count {
+.header-routes__stage-count {
   width: 56px;
   height: 56px;
   font-size: 36px;
@@ -560,18 +571,18 @@ input::placeholder {
   margin: 0 auto;
 }
 
-.how-it-works__body__card {
+.how-it-works__card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 225px;
 }
 
-.how-it-works__body__card__image {
+.how-it-works__icon {
   margin-bottom: 30px;
 }
 
-.how-it-works__body__card__desc {
+.how-it-works__desc {
   font-size: 24px;
   line-height: 28px;
   text-align: center;
@@ -604,13 +615,13 @@ input::placeholder {
   width: 400px;
 }
 
-.review-card__body__name {
+.review-card__name {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 25px;
 }
 
-.review-card__body__text {
+.review-card__text {
   font-size: 18px;
   font-weight: 300;
   font-style: italic;
@@ -655,7 +666,7 @@ input::placeholder {
   margin-bottom: 30px;
 }
 
-.contact-us__list__item {
+.contact-us__item {
   position: relative;
   font-size: 24px;
   font-weight: 300;
@@ -663,11 +674,11 @@ input::placeholder {
   margin-bottom: 25px;
 }
 
-.contact-us__list__item:last-child {
+.contact-us__item:last-child {
   margin-bottom: 0;
 }
 
-.contact-us__list__item::before {
+.contact-us__item::before {
   content: '';
   display: block;
   position: absolute;
@@ -705,13 +716,13 @@ input::placeholder {
   margin-bottom: 50px;
 }
 
-.subscriptions__email__input {
+.subscriptions-email__input {
   width: 450px;
   margin-top: 20px;
   margin-right: 33px;
 }
 
-.subscriptions__email__button {
+.subscriptions-email__button {
   width: 170px;
   height: 60px;
   text-transform: uppercase;
@@ -727,11 +738,11 @@ input::placeholder {
   margin-right: 48px;
 }
 
-.socials-list__item__link:hover svg path {
+.socials-list__link:hover svg path {
   fill: #ffca62;
 }
 
-.socials-list__item__title {
+.socials-list__title {
   font-size: 0;
 }
 
@@ -754,19 +765,19 @@ input::placeholder {
   padding: 26px 0 34px 0;
 }
 
-.footer__bottom__logo {
+.footer-bottom__logo {
   font-size: 36px;
   font-weight: 900;
 }
 
-.footer__bottom__go-up-button {
+.footer-bottom__go-up-button {
   font-size: 0;
   width: 36px;
   height: 36px;
   background-image: url(./images/icons/goup.svg);
 }
 
-.footer__bottom__credentials {
+.footer-bottom__credentials {
   font-size: 24px;
   font-weight: 300;
 }
@@ -1174,7 +1185,7 @@ input:checked + .checkbox-slider:before {
   margin-right: 5px;
 }
 
-.routes-main__header__sort-by {
+.routes-header__sort-by {
   position: relative;
   display: flex;
   width: 250px;
@@ -1197,21 +1208,21 @@ input:checked + .checkbox-slider:before {
   border-top: none;
 }
 
-.routes-main__header__show-count a:not(:last-child) {
+.routes-header__show-count a:not(:last-child) {
   margin-right: 5px;
 }
 
-.routes-main__train-list__item {
+.train {
   display: flex;
   border: 1px solid #c4c4c4;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.routes-main__train-list__item:hover {
+.train:hover {
   border: 1px solid #ffa800;
 }
 
-.routes-main__train-list__item:not(:last-child) {
+.train:not(:last-child) {
   margin-bottom: 47px;
 }
 
@@ -1230,26 +1241,28 @@ input:checked + .checkbox-slider:before {
   flex-direction: column;
 }
 
-.train__info__header {
+.train__header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.train__info__icon {
+.train__icon {
   width: 86px;
   height: 86px;
 }
 
-.train__info__train-number {
+.train__number {
   font-size: 24px;
   font-weight: 500;
   color: #3e3c41;
+  padding: 0 20px;
   margin: 20px 0;
 }
 
-.train__info__city-start {
-  color: #928f94;
+.train__departure-from,
+.train__departure-to {
+  text-transform: capitalize;
 }
 
 .train__directions {
@@ -1258,43 +1271,45 @@ input:checked + .checkbox-slider:before {
   padding: 55px 40px;
 }
 
-.train__directions__row {
+.train-directions__row {
   display: flex;
   justify-content: space-between;
 }
 
-.train__directions__row:not(:last-child) {
+.train-directions__row:not(:last-child) {
   margin-bottom: 65px;
 }
 
-.train__directions__from,
-.train__directions__to {
+.train-directions__from,
+.train-directions__to {
   display: flex;
   flex-direction: column;
 }
 
-.train__directions__time {
+.train-directions__time {
   font-size: 24px;
   font-weight: 700;
 }
 
-.train__directions__city {
+.train-directions__city {
   font-size: 18px;
+  text-transform: capitalize;
 }
 
-.train__directions__railway-stantion {
+.train-directions__railway-stantion {
   color: #928f94;
+  text-transform: capitalize;
 }
 
-.train__directions__duration {
+.train-directions__duration {
   position: relative;
 }
 
-.train__directions__duration__time {
+.train-directions__duration-time {
   color: #c4c4c4;
 }
 
-.train__directions__duration__time::after {
+.train-directions__duration-time::after {
   content: '';
   display: block;
   position: absolute;
@@ -1305,7 +1320,7 @@ input:checked + .checkbox-slider:before {
   left: calc(50% - 15px);
 }
 
-.train__directions__duration__time.duration-time_back::after {
+.train-directions__duration-time.duration-time_back::after {
   transform: scaleX(-1);
 }
 
@@ -1319,36 +1334,37 @@ input:checked + .checkbox-slider:before {
   border-left: 1px dashed #e5e5e5;
 }
 
-.train__options__seats {
+.train-options__seats {
   width: 100%;
   margin-bottom: auto;
 }
 
-.train__options__seats > div {
+.train-options__seat {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 30px;
 }
 
-.train__options__seats__type {
+.train-options__seat-type {
   width: 85px;
 }
 
-.train__options__seats__amount {
+.train-options__seats-amount {
   color: #ffa800;
   font-weight: 500;
   padding: 0 5px;
 }
 
-.train__options__seats__price {
+.train-options__seat-price {
   position: relative;
   width: 115px;
   padding-right: 18px;
   margin-bottom: -2px;
 }
 
-.train__options__seats__price::after {
+.train-options__seat-price::after {
   content: '';
   display: block;
   position: absolute;
@@ -1359,18 +1375,18 @@ input:checked + .checkbox-slider:before {
   right: 0;
 }
 
-.train__options__seats__price span {
+.train-options__seat-price span {
   font-size: 24px;
   font-weight: 700;
 }
 
-.train__options__seats__services-list {
+.train-options__services {
   display: flex;
   margin-bottom: 15px;
   margin-left: auto;
 }
 
-.train__options__seats__services-list__item {
+.train-options__service {
   width: 20px;
   height: 20px;
   font-size: 0;
@@ -1378,7 +1394,7 @@ input:checked + .checkbox-slider:before {
   background-repeat: no-repeat;
 }
 
-.train__options__seats__services-list__item:not(:last-child) {
+.train-options__service:not(:last-child) {
   margin-right: 10px;
 }
 
@@ -1398,7 +1414,7 @@ input:checked + .checkbox-slider:before {
   background-image: url(./images/icons/conditioner.svg);
 }
 
-.train__options__proceed-ordering {
+.train-options__proceed-ordering {
   width: 100%;
   font-size: 24px;
   font-weight: 700;
@@ -2490,17 +2506,17 @@ input:disabled + .seats-info__services__item__icon path {
 
 /* routes main verification */
 
-.routes-main__verification__item {
+.routes-verification__item {
   background-color: white;
   border: 1px solid #c4c4c4;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.routes-main__verification__item:not(:last-child) {
+.routes-verification__item:not(:last-child) {
   margin-bottom: 45px;
 }
 
-.routes-main__verification__header {
+.routes-verification__header {
   height: 95px;
   font-size: 30px;
   line-height: 95px;
@@ -2508,12 +2524,12 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 0 30px;
 }
 
-.routes-main__verification__item:not(:first-child) .routes-main__verification__body {
+.routes-verification__item:not(:first-child) .routes-verification__body {
   display: flex;
   justify-content: space-between;
 }
 
-.routes-main__verification__passengers__side-column {
+.routes-verification__side-column {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -2523,33 +2539,33 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 20px;
 }
 
-.routes-main__verification__change {
+.routes-verification__change-button {
   width: 100%;
   height: 40px;
   font-size: 24px;
   font-weight: 700;
 }
 
-.routes-main__verification__train .routes-main__train-list__item {
+.routes-verification__train .train {
   box-shadow: none;
   border: none;
 }
 
-.routes-main__verification__passengers__list {
+.routes-verification__passengers-list {
   width: 100%;
   padding: 30px 0;
 }
 
-.routes-main__verification__passengers__list__item {
+.routes-verification__passenger {
   display: flex;
   padding: 30px 0;
 }
 
-.routes-main__verification__passengers__list__item:not(:first-child) {
+.routes-verification__passenger:not(:first-child) {
   border-top: 1px dashed #e5e5e5;
 }
 
-.routes-main__verification__passengers__list__item__ticket-type {
+.routes-verification__ticket-type {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2558,44 +2574,44 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 0 35px;
 }
 
-.routes-main__verification__passengers__list__item__ticket-type img {
+.routes-verification__ticket-type img {
   width: 68px;
   height: 68px;
   margin-bottom: 15px;
 }
 
-.routes-main__verification__passengers__list__item__ticket-details {
+.routes-verification__ticket-details {
   display: flex;
   flex-direction: column;
 }
 
-.routes-main__verification__passengers__list__item__ticket-details span {
+.routes-verification__ticket-details span {
   font-size: 18px;
   color: #928f94;
   margin-bottom: 5px;
 }
 
-.routes-main__verification__passengers__list__item__ticket-details span:first-child {
+.routes-verification__ticket-details span:first-child {
   color: #292929;
   margin-bottom: 10px;
 }
 
-.routes-main__verification__passengers__total-price {
+.routes-verification__total-price {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
   margin-bottom: 30px;
 }
 
-.routes-main__verification__passengers__total-price span:not(:first-child) {
+.routes-verification__total-price span:not(:first-child) {
   font-weight: 700;
 }
 
-.routes-main__verification__passengers__total-price svg {
+.routes-verification__total-price svg {
   margin-left: 7px;
 }
 
-.routes-main__verification__payment__type {
+.routes-verification__payment-type {
   font-size: 24px;
   padding: 45px 30px 76px;
 }
@@ -2633,7 +2649,7 @@ input:disabled + .seats-info__services__item__icon path {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.succeed__card__header {
+.succeed-card__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2644,25 +2660,25 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 0 80px;
 }
 
-.succeed__card__header__total-price {
+.succeed-card__total-price {
   color: #928f94;
 }
 
-.succeed__card__header__total-price span {
+.succeed-card__total-price span {
   color: #292929;
 }
 
-.succeed__card__header__order-number,
-.succeed__card__header__total-price span {
+.succeed-card__order-number,
+.succeed-card__total-price span {
   font-weight: 700;
 }
 
-.succeed__card__header__total-price span,
-.succeed__card__header__total-price span svg {
+.succeed-card__total-price span,
+.succeed-card__total-price span svg {
   margin-left: 10px;
 }
 
-.succeed__card__instructions {
+.succeed-card__instructions {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -2670,45 +2686,45 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 40px 0;
 }
 
-.succeed__card__instructions__item {
+.succeed-card__instructions-item {
   max-width: 200px;
   text-align: center;
   font-size: 18px;
 }
 
-.succeed__card__instructions__item:not(:first-child) {
+.succeed-card__instructions-item:not(:first-child) {
   margin-left: 140px;
 }
 
-.succeed__card__instructions__item img {
+.succeed-card__instructions-item img {
   margin-bottom: 5px;
 }
 
-.succeed__card__instructions__item span {
+.succeed-card__instructions-item span {
   font-weight: 500;
 }
 
-.succeed__card__info {
+.succeed-card__info {
   font-size: 24px;
   background-color: white;
   padding: 95px 200px 130px;
 }
 
-.succeed__card__info h2 {
+.succeed-card__info h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 50px;
 }
 
-.succeed__card__info p:not(.succeed__card__info__thank-you) {
+.succeed-card__info p:not(.succeed-card__thank-you) {
   margin-bottom: 90px;
 }
 
-.succeed__card__info__thank-you {
+.succeed-card__thank-you {
   font-weight: 700;
 }
 
-.succeed__card__footer {
+.succeed-card__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2718,21 +2734,21 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 0 80px;
 }
 
-.succeed__card__footer__rate {
+.succeed-card__rate {
   display: flex;
   align-items: center;
 }
 
-.succeed__card__footer__rate span {
+.succeed-card__rate span {
   padding-top: 10px;
   margin-right: 30px;
 }
 
-.succeed__card__footer__rate__star {
+.succeed-card__rate-star {
   margin-right: 20px;
 }
 
-.succeed__card__footer__rate__star:hover {
+.succeed-card__rate-star:hover {
   fill: white;
   cursor: pointer;
 }
@@ -2741,7 +2757,7 @@ input:disabled + .seats-info__services__item__icon path {
   fill: white;
 }
 
-.succeed__card__footer__back-to-homepage {
+.succeed-card__back-to-homepage {
   background-color: transparent;
   border: 1px solid #3e3c41;
   border-radius: 5px;
@@ -2750,11 +2766,11 @@ input:disabled + .seats-info__services__item__icon path {
   padding: 15px 12px;
 }
 
-.succeed__card__footer__back-to-homepage:hover {
+.succeed-card__back-to-homepage:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.succeed__card__footer__back-to-homepage:active {
+.succeed-card__back-to-homepage:active {
   color: white;
   border-color: white;
 }

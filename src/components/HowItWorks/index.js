@@ -11,33 +11,33 @@ function HowItWorks() {
           <button className="how-it-works__learn-more btn btn_white-border">Узнать больше</button>
         </div>
         <div className="how-it-works__body">
-          <div className="how-it-works__body__card">
+          <div className="how-it-works__card">
             <img
-              className="how-it-works__body__card__image"
+              className="how-it-works__icon"
               src={images.howitworks.first}
               alt="Удобный заказ на сайте"
             />
-            <p className="how-it-works__body__card__desc">
+            <p className="how-it-works__desc">
               Удобный заказ
               <br />
               на сайте
             </p>
           </div>
-          <div className="how-it-works__body__card">
+          <div className="how-it-works__card">
             <img
-              className="how-it-works__body__card__image"
+              className="how-it-works__icon"
               src={images.howitworks.second}
               alt="Нет необходимости ехать в офис"
             />
-            <p className="how-it-works__body__card__desc">Нет необходимости ехать в офис</p>
+            <p className="how-it-works__desc">Нет необходимости ехать в офис</p>
           </div>
-          <div className="how-it-works__body__card">
+          <div className="how-it-works__card">
             <img
-              className="how-it-works__body__card__image"
+              className="how-it-works__icon"
               src={images.howitworks.third}
               alt="Огромный выбор направлений"
             />
-            <p className="how-it-works__body__card__desc">Огромный выбор направлений</p>
+            <p className="how-it-works__desc">Огромный выбор направлений</p>
           </div>
         </div>
       </Wrapper>

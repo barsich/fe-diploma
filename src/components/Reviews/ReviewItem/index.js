@@ -10,8 +10,8 @@ function ReviewItem(item) {
         alt={name}
       />
       <div className="review-card__body">
-        <p className="review-card__body__name">{name}</p>
-        <p className="review-card__body__text">{text}</p>
+        <p className="review-card__name">{name}</p>
+        <p className="review-card__text">{text}</p>
       </div>
     </div>
   );

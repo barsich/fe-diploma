@@ -3,7 +3,7 @@ import Wrapper from '../Wrapper';
 import HeaderMain from './HeaderMain';
 import HeaderRoutes from './HeaderRoutes';
 
-export default function Header({ pageType }) {
+function Header({ pageType }) {
   let headerClass = '';
 
   switch (pageType) {
@@ -64,3 +64,5 @@ export default function Header({ pageType }) {
     </header>
   );
 }
+
+export default Header;

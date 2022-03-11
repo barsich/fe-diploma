@@ -7,6 +7,7 @@ import ru from 'date-fns/esm/locale/ru/index.js';
 import CityList from './CityList';
 import { changeOption } from '../../../reducers/routes';
 import { getFormattedDate } from '../../../utils';
+import { useEffect } from 'react';
 
 function RouteSelector({ pageType }) {
   // FIXME дейтпикер ломается при фокусе
@@ -17,9 +18,10 @@ function RouteSelector({ pageType }) {
   const [startDateTo, setStartDateTo] = useState();
   const [cityFrom, setCityFrom] = useState('');
   const [cityTo, setCityTo] = useState('');
-  const [cityIdFrom, setCityIdFrom] = useState(0);
-  const [cityIdTo, setCityIdTo] = useState(0);
+  const [cityIdFrom, setCityIdFrom] = useState('');
+  const [cityIdTo, setCityIdTo] = useState('');
   const [focusedInput, setFocusedInput] = useState(null);
+  const [onBlured, setOnBlured] = useState(false);
 
   const { cities } = useSelector((state) => state.cities);
 
@@ -32,29 +34,49 @@ function RouteSelector({ pageType }) {
   };
   const today = new Date();
 
-  const handleChange = ({ target }) => {
-    if (target.className === 'route-selector__direction-from') {
-      setCityFrom(target.value);
-      if (cities.length === 1 && cities[0].name.toLowerCase() === target.value.toLowerCase()) {
-        setCityIdFrom(cities[0]._id);
-      }
-    } else if (target.className === 'route-selector__direction-to') {
-      setCityTo(target.value);
-      if (cities.length === 1 && cities[0].name.toLowerCase() === target.value.toLowerCase()) {
-        setCityIdTo(cities[0]._id);
-      }
-    }
-    dispatch(fetchCities(target.value));
-  };
-
-  const handleBlur = ({ target }) => {
-    if (target.tagName === 'INPUT') {
+  useEffect(() => {
+    if (onBlured) {
       return;
     }
+    const isSame =
+      cities.length === 1 &&
+      focusedInput &&
+      cities[0].name.toLowerCase() === focusedInput.value.toLowerCase();
+    const inputFrom = focusedInput && focusedInput.className === 'route-selector__direction-from';
+    const inputTo = focusedInput && focusedInput.className === 'route-selector__direction-to';
+
+    if (isSame && inputFrom) {
+      setCityIdFrom(cities[0]._id);
+    } else if (isSame && inputTo) {
+      setCityIdTo(cities[0]._id);
+    } else if (!isSame && inputFrom) {
+      setCityIdFrom('');
+    } else if (!isSame && inputTo) {
+      setCityIdTo('');
+    }
+  }, [cities, cityIdFrom, cityIdTo, focusedInput, onBlured]);
+
+  const handleChange = ({ target }) => {
+    dispatch(fetchCities(target.value));
+    if (target.className === 'route-selector__direction-from') {
+      setCityFrom(target.value);
+    } else if (target.className === 'route-selector__direction-to') {
+      setCityTo(target.value);
+    }
+    if (target.value === '') {
+      dispatch(clearCities());
+    }
+  };
+
+  const handleBlur = () => {
+    setOnBlured(true);
     setFocusedInput(null);
+    dispatch(clearCities());
+    console.log(cityIdFrom, cityIdTo);
   };
 
   const handleFocus = ({ target }) => {
+    setOnBlured(false);
     setFocusedInput(target);
     if (target.value) {
       dispatch(fetchCities(target.value));
@@ -62,6 +84,7 @@ function RouteSelector({ pageType }) {
   };
 
   const handleCitySelect = (value, direction, id) => {
+    setOnBlured(true);
     if (direction === 'from') {
       setCityFrom(value);
       setCityIdFrom(id);
@@ -75,13 +98,15 @@ function RouteSelector({ pageType }) {
   // TODO загрузка
   const handleSubmit = (event) => {
     event.preventDefault();
+    // TODO если указан корявый город, выдать предупреждение
     const options = {
       from_city_id: cityIdFrom,
       to_city_id: cityIdTo,
       date_start: startDateFrom && getFormattedDate(startDateFrom),
       date_end: startDateTo && getFormattedDate(startDateTo),
     };
-    dispatch(dispatch(changeOption(options)));
+    dispatch(changeOption(options));
+    // TODO не перенаправлять, если уже на /routes
     navigate('/routes');
   };
 
@@ -93,39 +118,37 @@ function RouteSelector({ pageType }) {
     >
       <div className="route-selector__row">
         <p className="route-selector__direction-title">Направление</p>
-        <div className="route-selector__input-wrapper" tabIndex={0} onBlur={handleBlur}>
-          <input
-            type="text"
-            className="route-selector__direction-from"
-            placeholder="Откуда"
-            onChange={handleChange}
-            onFocus={handleFocus}
-            value={cityFrom}
-            required={true}
-          />
-          {cities.length !== 0 &&
-            focusedInput &&
-            focusedInput.className === 'route-selector__direction-from' && (
-              <CityList cities={cities} direction="from" onCitySelect={handleCitySelect} />
-            )}
-        </div>
+        <input
+          type="text"
+          className="route-selector__direction-from"
+          placeholder="Откуда"
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          value={cityFrom}
+          required={true}
+        />
+        {cities.length !== 0 &&
+          focusedInput &&
+          focusedInput.className === 'route-selector__direction-from' && (
+            <CityList cities={cities} direction="from" onCitySelect={handleCitySelect} />
+          )}
         <button className="route-selector__swapper btn btn-icon" type="button"></button>
-        <div className="route-selector__input-wrapper" tabIndex={0} onBlur={handleBlur}>
-          <input
-            type="text"
-            className="route-selector__direction-to"
-            placeholder="Куда"
-            onChange={handleChange}
-            onFocus={handleFocus}
-            value={cityTo}
-            required={true}
-          />
-          {cities.length !== 0 &&
-            focusedInput &&
-            focusedInput.className === 'route-selector__direction-to' && (
-              <CityList cities={cities} direction="to" onCitySelect={handleCitySelect} />
-            )}
-        </div>
+        <input
+          type="text"
+          className="route-selector__direction-to"
+          placeholder="Куда"
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          value={cityTo}
+          required={true}
+        />
+        {cities.length !== 0 &&
+          focusedInput &&
+          focusedInput.className === 'route-selector__direction-to' && (
+            <CityList cities={cities} direction="to" onCitySelect={handleCitySelect} />
+          )}
       </div>
       <div className="route-selector__row">
         <p className="route-selector__date-title">Дата</p>
@@ -134,7 +157,6 @@ function RouteSelector({ pageType }) {
           selected={startDateFrom}
           onChange={(date) => setStartDateFrom(date)}
           minDate={today}
-          required={true}
           {...datepickerOptions}
         />
         <DatePicker

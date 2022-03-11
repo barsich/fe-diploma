@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const fetchCities = createAsyncThunk('cities', async (value) => {
-  console.log('fetchCities createAsyncThunk');
   let url = `${process.env.REACT_APP_API_URL}routes/cities?name=${value}`;
   const response = await fetch(url);
   const data = await response.json();
@@ -30,7 +29,6 @@ const cities = createSlice({
         state.status = 'failed';
       })
       .addCase(fetchCities.fulfilled, (state, action) => {
-        console.log('fetchCities.fulfilled', action.payload);
         if (action.payload.error) {
           return state; // TODO выводить ошибку?
         }

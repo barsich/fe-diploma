@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// TODO custom
 function Pagination() {
   return (
     <div className="pagination">
